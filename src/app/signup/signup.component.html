@@ -1,0 +1,44 @@
+<br><br>
+<div id="form">
+  <form (submit)=forRegistration()>
+    <div class="formcontainer">
+      <h2 style="color:#d9534f;font-family:'Galada'">Sign Up Form</h2>
+      
+      <label for="firstname" style="font-size:15px;">
+        <b>First Name:</b>
+      </label>
+      <input type="text" placeholder="Enter firstname" style="height:30px;" [(ngModel)]="firstname" id="firstname" name="firstname" required>
+      <label for="lastname" style="font-size:15px;">
+        <b>Last Name:</b>
+      </label>
+      <input type="text" placeholder="Enter lastname" style="height:30px;" [(ngModel)]="lastname" id="lastname" name="lastname" required>
+      <label for="licensenumber" style="font-size:15px;">
+        <b>License Number:</b>
+      </label>
+      <input type="text" placeholder="Enter License Number" style="height:30px;" [(ngModel)]="licensenumber" id="licensenumber" name="licensenumber" required>
+      <label for="email" style="font-size:15px;">
+        <b>Email:</b>
+      </label>
+      <input type="text" placeholder="Enter email" style="height:30px;" [(ngModel)]="email" id="email" name="email" required>
+      <label for="username" style="font-size:15px;">
+        <b>Username:</b>
+      </label>
+      <input type="text" placeholder="Enter username" style="height:30px;" [(ngModel)]="username" id="username" name="username" required>
+      <label for="password" style="font-size:15px;">
+        <b>Password:</b>
+      </label>
+      <input type="password" placeholder="Enter password" style="height:30px;" [(ngModel)]="password" id="password" name="password" required>
+      <button type="submit" value="Submit">Submit</button>
+      <br>
+    </div>
+    <br>
+  </form>
+</div>
+
+<div>
+    <footer>
+        <div id="footer-contentportfolio">
+            <p>@Copyright</p>
+        </div>
+    </footer>
+</div>
