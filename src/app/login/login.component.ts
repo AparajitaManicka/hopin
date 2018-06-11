@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         this.appService.currentUserId = res.id;
         console.log("@Login SETTING USer id :" + this.appService.currentUserId);
         this.router.navigate(["/choice"]);
-      })      
+      })
     }
   }
 }
