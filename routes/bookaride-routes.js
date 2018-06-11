@@ -21,19 +21,18 @@ module.exports = function (app) {
     });
 
     app.post("/api/reserveaseat", function (req, res) {
-
-        console.log("While updating table during seat reserve:" + req.body)
-        db.Offeredride.update({ seats: req.body.seats },
+        console.log("Update table to reserve seat:" + JSON.stringify(req.body))
+         db.Offeredride.update({ seats: req.body.seats },
             { where: { UserId: req.body.UserId } }
-        );
+        ).then(function (dbOfferedride) {
+            res.json(dbOfferedride);
+        });
     });
 
     app.post("/api/userconfirm", function (req, res) {
 
-        console.log("Transaction:" + req.body);
-        req.body.UserId = req.user.id;
-        console.log("Transaction:" + req.body);
-        
+        console.log("Transaction:" + JSON.stringify(req.body));
+
         db.Bookedride.create(req.body).then(function (dbBookedride) {
             res.json(dbBookedride);
         });

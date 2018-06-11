@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule,Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-welcome',
@@ -8,7 +9,7 @@ import { RouterModule,Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private flashmsgservice: FlashMessagesService) { }
 
   ngOnInit() {
   }

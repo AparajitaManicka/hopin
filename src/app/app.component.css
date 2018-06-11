@@ -1,0 +1,16 @@
+
+
+  #footer-contentportfolio {
+    background: black;
+    text-align: center;
+    color: white;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color:#d9534f;
+}

@@ -170,10 +170,11 @@ margin-left: 375px;
 width:150px;
 float:right;
 }
-.btn{
+.btn-danger{
 margin-left: 10px;
 margin-right: 10px;
 float: right;
+margin-bottom:10px;
 }
 
 #footer-contentportfolio {

@@ -39,13 +39,6 @@ app.use(bodyParser.json());
 // Static directory
 app.use(express.static("public"));
 
-
-// required for passport
-app.use(session({
-  secret: 'appysecretpassphrase',
-  resave: true,
-  saveUninitialized: true
-})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 // Routes
