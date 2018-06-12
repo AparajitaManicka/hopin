@@ -18,7 +18,7 @@ module.exports = function (app) {
 
     app.get("/getridesoffered/:userid", function (req, res) {
 
-        console.log("fetching rides offered for user :"+req.params.userid)
+        console.log("fetching rides offered for user :" + req.params.userid)
 
         db.Offeredride.findAll({
             where: {
@@ -35,13 +35,18 @@ module.exports = function (app) {
         console.log("Transaction:" + req.body);
         req.body.UserId = req.user.id;
 
-        db.Offeredride.destroy({ where: { UserId: req.body.UserId } });
+        db.Offeredride.destroy({ where: { UserId: req.body.UserId } 
+        })
+
 
     });
 
     app.post("/deleteofferedride", function (req, res) {
         console.log("ABOUT TO DELETE:" + JSON.stringify(req.body));
-        db.Offeredride.destroy({where : req.body})
+        db.Offeredride.destroy({ where: req.body }).then(function (cancelledRide) {
+            console.log("After delete:"+cancelledRide);
+            res.json(cancelledRide);
+        });
     });
 
 };

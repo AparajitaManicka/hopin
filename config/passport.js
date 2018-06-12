@@ -3,8 +3,8 @@
 // load all the things we need
 
 const jwt = require('jsonwebtoken');
-const JwtStrategy=require('passport-jwt').Strategy;
-const ExtractJwt =require('passport-jwt').ExtractJwt;
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
 var LocalStrategy = require('passport-local').Strategy;
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
@@ -24,14 +24,14 @@ module.exports = function (passport) {
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
     opts.secretOrKey = config.secretOrKey;
 
-    passport.use(new JwtStrategy(opts,(jwt_payload,done)=>{
-        
+    passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
         db.User.findOne({
             where: {
-                id:1
+                id: 1
             }
         }).then(function (dbUser, err) {
-            done(err, dbUser);
+            console.log("dbUser:"+dbUser)
+            
         });
     }))
 

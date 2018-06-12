@@ -5,12 +5,14 @@
 <br>
 <br>
 <!-- <div id="ridesofferedbyyou" style="width:80%;margin-left: 150px;"> -->
-
+<flash-messages></flash-messages>
 <div style="margin-left:10%;margin-right:10%">
+
     <table class="table">
         <thead>
             <tr>
                 <th>Pickup</th>
+                <th>Dropoff</th>
                 <th>Departure</th>
                 <th>Comment</th>
                 <th>Price</th>
@@ -22,6 +24,7 @@
             <tr *ngFor='let ride of viewRidesOfferedList'>
                 <td>{{ride.pickup}}</td>
                 <td>{{ride.dropoff}}</td>
+                <td>{{ride.departure | date: 'medium'}}</td>
                 <td>{{ride.comment}}</td>
                 <td>{{ride.price}}</td>
                 <td>{{ride.seats}}</td>
@@ -30,10 +33,16 @@
                 </td>
             </tr>
 
-            <!-- Pickup: {{ride.pickup}} Dropoff:{{ride.dropoff}} Departure:{{ride.departure}} Comment:{{ride.comment}} Price:{{ride.price}} Seats:{{ride.seats}}
+        </tbody>
+    </table>
+</div>
+<!-- <script src="js/viewridesofferedbyyou.js" type="text/javascript"></script> -->
+
+
+<!-- Pickup: {{ride.pickup}} Dropoff:{{ride.dropoff}} Departure:{{ride.departure}} Comment:{{ride.comment}} Price:{{ride.price}} Seats:{{ride.seats}}
         <input type="button" value="DELETE" (click)="deleteofferedride(ride)"> -->
 
-            <!--         <div class="panel panel-default">
+<!--         <div class="panel panel-default">
             <div class="panel-heading">
                 <b>Pickup</b>: {{ride.pickup}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dropoff: {{ride.dropoff}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Departure:{{ride.departure}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -45,10 +54,3 @@
                 <br> Comment:{{ride.comment}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div> -->
-
-
-
-        </tbody>
-    </table>
-</div>
-<!-- <script src="js/viewridesofferedbyyou.js" type="text/javascript"></script> -->

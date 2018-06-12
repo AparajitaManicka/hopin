@@ -8,8 +8,6 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./viewridestravelledbyyou.component.css']
 })
 export class ViewridestravelledbyyouComponent implements OnInit {
-
-
   viewRidesTravelledList: any;
 
   constructor(private appService: AppService) {
@@ -17,17 +15,14 @@ export class ViewridestravelledbyyouComponent implements OnInit {
     this.getRidesTravelled()
   }
   
-
   ngOnInit() {
   }
 
-  
   getRidesTravelled() {
     this.appService.ridesTravelled().subscribe(res => {
       console.log("RESPONSE for ridesOFfere:" + JSON.stringify(res))
       this.viewRidesTravelledList = res;
     });
-
   }
 
   deletetravelledride(cancelride) {
@@ -36,5 +31,4 @@ export class ViewridestravelledbyyouComponent implements OnInit {
       
     });
   }
-
 }

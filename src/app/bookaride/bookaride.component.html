@@ -46,7 +46,7 @@
                 <tr *ngFor='let ride of availablerides'>
                   <td>{{ride.pickup}}</td>
                   <td>{{ride.dropoff}}</td>
-                  <td>{{ride.departure}}</td>
+                  <td>{{ride.departure | date: 'medium'}}</td>
                   <td>{{ride.seats}}</td>
                   <td>{{ride.price}}</td>
                   <td>{{ride.comment}}</td>

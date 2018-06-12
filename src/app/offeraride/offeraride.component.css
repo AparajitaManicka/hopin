@@ -177,12 +177,15 @@ margin-right: 100px;
 float: left;
 }
 
-agm-map
+#map
 {
-    margin-top: 300px;
+    margin-top: 70px;
     height: 400px;
     width: 400px;
 }
+/* .map{
+    width:40%;
+} */
 
 #footer-contentportfolio {
     background: black;

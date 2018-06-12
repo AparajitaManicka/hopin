@@ -41,6 +41,7 @@ export class BookarideComponent implements OnInit {
     var userseatconfirmation = {
       pickup: ride.pickup,
       dropoff: ride.dropoff,
+      departure: ride.departure,
       price: ride.price,
       seats: 1,
       UserId: this.appService.currentUserId
